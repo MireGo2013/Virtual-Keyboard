@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+html,
+body {
+  font-family: "Playfair Display", serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.keyboard_wrapper {
+  margin: auto;
+  max-width: 730px;
+  position: fixed;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  padding: 5px 0;
+  background-color: #079488;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.keyboard_wrapper.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.keyboard_order_keys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.keyboard__keys {
+  text-align: center;
+}
+
+.key {
+  height: 45px;
+  width: 6%;
+  max-width: 45px;
+  margin: 3px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(7, 1, 1, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  outline: none;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: top;
+  position: relative;
+}
+
+.key_wide {
+  width: 10%;
+  max-width: 110px;
+}
+
+.key_wide_extra {
+  width: 41%;
+  max-width: 289px;
+}
+
+.key_check {
+  background: rgba(7, 1, 1, 0.65);
+}
+
+.key:active {
+  background: rgba(7, 1, 1, 0.3);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.key.active {
+  background: rgba(7, 1, 1, 0.3);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.key_activatable::after {
+  content: "";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(7, 1, 1, 0.5);
+}
+
+.key_activatable_active::after {
+  background: lime;
+}
+
+i {
+  pointer-events: none;
+}
+
+.main_symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.main_symbol.inactiveSymbol {
+  top: 5%;
+  left: 5%;
+  -webkit-transform: translate(-5%, -5%);
+          transform: translate(-5%, -5%);
+  font-size: 1rem;
+}
+
+.second_symbol {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  -webkit-transform: translate(-5%, -5%);
+          transform: translate(-5%, -5%);
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.second_symbol.activeSymbol {
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+[data-code="MetaLeft"] {
+  width: 8%;
+  max-width: 55px;
+}
+
+[data-code="Tab"],
+[data-code="ControlLeft"],
+[data-code="AltLeft"],
+[data-code="Delete"],
+[data-code="AltRight"] {
+  width: 10%;
+  max-width: 65px;
+}
+
+[data-code="Disabled"] {
+  background-color: #079488;
+  pointer-events: none;
+}
+
+#area {
+  width: 90%;
+  height: auto;
+  resize: none;
+  margin: 20px auto;
+  display: block;
+  border: 2px solid palegoldenrod;
+}
+/*# sourceMappingURL=style.css.map */

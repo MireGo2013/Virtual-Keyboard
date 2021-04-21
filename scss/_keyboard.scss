@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.keyboard_wrapper {
+	margin: auto;
+	max-width: 730px;
+	position: fixed;
+	left: 10%;
+	right: 10%;
+	bottom: 0;
+	padding: 5px 0;
+	background-color: rgb(7, 148, 136);
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	user-select: none;
+	transform: translateY(100%);
+	transition: transform 0.4s ease;
+	&.active {
+		transform: translateY(0%);
+	}
+}
+
+.keyboard_order_keys {
+	display: flex;
+}

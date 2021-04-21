@@ -1,0 +1,115 @@
+.keyboard__keys {
+	text-align: center;
+}
+
+.key {
+	height: 45px;
+	width: 6%;
+	max-width: 45px;
+	margin: 3px;
+	border-radius: 4px;
+	border: none;
+	background: rgba(7, 1, 1, 0.5);
+	color: white;
+	font-size: 1.5rem;
+	outline: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: top;
+	// -webkit-tap-highlight-color: transparent;
+	position: relative;
+	&_wide {
+		width: 10%;
+		max-width: 110px;
+	}
+	&_wide_extra {
+		width: 41%;
+		max-width: 289px;
+	}
+	&_check {
+		background: rgba(7, 1, 1, 0.65);
+	}
+
+	&:active {
+		background: rgba(7, 1, 1, 0.3);
+		transform: scale(0.95);
+	}
+
+	&.active {
+		background: rgba(7, 1, 1, 0.3);
+		transform: scale(0.95);
+	}
+}
+
+.key_activatable::after {
+	content: "";
+	top: 10px;
+	right: 10px;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: rgba(7, 1, 1, 0.5);
+}
+
+.key_activatable_active {
+	&::after {
+		background: lime;
+	}
+}
+
+i {
+	pointer-events: none;
+}
+
+.main_symbol {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease;
+}
+
+.main_symbol.inactiveSymbol {
+	top: 5%;
+	left: 5%;
+	transform: translate(-5%, -5%);
+	font-size: 1rem;
+}
+
+.second_symbol {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	transform: translate(-5%, -5%);
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+
+.second_symbol.activeSymbol {
+	top: 50%;
+	left: 50%;
+	font-size: 1.5rem;
+	transform: translate(-50%, -50%);
+}
+
+[data-code="MetaLeft"] {
+	width: 8%;
+	max-width: 55px;
+}
+
+[data-code="Tab"],
+[data-code="ControlLeft"],
+[data-code="AltLeft"],
+[data-code="Delete"],
+[data-code="AltRight"] {
+	width: 10%;
+	max-width: 65px;
+}
+
+[data-code="Disabled"] {
+	background-color: rgb(7, 148, 136);
+	pointer-events: none;
+}
